@@ -1,0 +1,52 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+
+/*
+ * Тема публичной части emi-yoga.ru.
+ *
+ * Цвета сняты с текущего сайта (конструктор Т-Банка):
+ *   --c-primary: #546de5 — основной акцент (кнопки, ссылки),
+ *   --c-secondary: #574b90 — вторичный акцент (заголовки секций),
+ *   --c-ink: #111111 — основной текст.
+ *
+ * Изменение переменной в одном месте обновляет весь сайт.
+ */
+:root {
+    --c-primary: #546de5;
+    --c-primary-dark: #3f56c4;
+    --c-secondary: #574b90;
+    --c-ink: #111111;
+    --c-muted: #555555;
+    --c-bg: #ffffff;
+    --c-bg-soft: #f6f7f8;
+    --c-accent: #ffec89;
+    --c-border: #e5e7eb;
+
+    --radius-card: 16px;
+    --container: 1200px;
+}
+
+@theme {
+    --font-sans: ui-sans-serif, system-ui, 'Segoe UI', Roboto, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    --color-primary: var(--c-primary);
+    --color-primary-dark: var(--c-primary-dark);
+    --color-secondary: var(--c-secondary);
+    --color-ink: var(--c-ink);
+    --color-muted: var(--c-muted);
+    --color-soft: var(--c-bg-soft);
+    --color-accent: var(--c-accent);
+}
+
+@layer base {
+    body {
+        @apply bg-white text-ink antialiased;
+    }
+
+    a {
+        @apply text-primary hover:text-primary-dark underline-offset-4 transition-colors;
+    }
+}
